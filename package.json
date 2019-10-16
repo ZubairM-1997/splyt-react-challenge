@@ -3,9 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.5.1",
+    "antd": "^3.23.6",
+    "google-map-react": "^1.1.5",
+    "mdbreact": "^4.21.1",
+    "rc-slider": "^8.7.1",
     "react": "^16.10.2",
+    "react-compound-slider": "^2.3.0",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-google-maps": "^9.4.5",
+    "react-scripts": "3.2.0",
+    "react-slider": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
