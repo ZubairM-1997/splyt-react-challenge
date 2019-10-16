@@ -3,15 +3,39 @@ import {GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow} from 'react-
 
 
 export default class GMap extends Component{
+
+	constructor(props){
+		super(props)
+		this.state = {
+			driverObjs: [[]]
+		}
+	}
+
+	componentDidUpdate(prevProps, prevState){
+		if (prevProps !== this.props) {
+			this.setState({
+				driverObjs: this.props.drivers
+			})
+
+		}
+
+	}
+
+
 	render(){
 		const GoogleMaps = withScriptjs(withGoogleMap(props => (
 			<GoogleMap
 				defaultCenter = {{lat: 51.5049375, lng: -0.0964509}}
-				defaultZoom = {13}
+				defaultZoom = {15}
 
 			>
 
-			<Marker position={{lat: 51.5049375, lng: -0.0964509}} draggable={true} />
+			{
+				this.state.driverObjs[0].map(driver => <Marker position={{lat: driver.location.latitude, lng: driver.location.longitude}} draggable={false} />)
+
+			}
+
+
 
 
 			</GoogleMap>
